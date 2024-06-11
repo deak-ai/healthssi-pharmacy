@@ -16,3 +16,20 @@ data class MedicamentRefDataDTO(
     val date: String
 )
 
+@Serializable
+data class PrescriptionData(
+    val stateId: String,
+    val issuanceDate: String?,
+    val expirationDate: String?,
+    val doctor: String?,
+    val doctorDid: String?,
+    val patientFirstName: String?,
+    val patientLastName: String?,
+    val patientBirthDate: String?,
+    val patientDid: String?,
+    val prescriptionId: String?,
+    val medicationId: String?,
+    val medicationRefData: MedicamentRefDataDTO?,
+    val verificationSuccess: Boolean = false
+)
+

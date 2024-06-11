@@ -1,0 +1,30 @@
+.gradle
+**/.gradle
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+**/local.properties
+
+**/.env
+
+### IntelliJ IDEA ###
+.idea/
+**/.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+server/docker-compose/postgres-data
+

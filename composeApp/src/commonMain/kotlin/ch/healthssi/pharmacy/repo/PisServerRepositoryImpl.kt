@@ -37,7 +37,7 @@ class PisServerRepositoryImpl(
                 setBody(requestPrescription)
                 expectSuccess = true
             }
-            Result.success(response.body<Url>())
+            Result.success(Url(response.body<String>()))
         } catch (t: Throwable) {
             Result.failure(t)
         }

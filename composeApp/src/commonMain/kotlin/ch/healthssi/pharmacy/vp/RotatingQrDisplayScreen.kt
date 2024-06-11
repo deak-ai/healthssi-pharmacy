@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 fun RotatingQrDisplayScreen(vpViewModel: RequestPresentationViewModel,
                             prescriptionViewModel: PrescriptionViewModel) {
 
+    val qrCode by vpViewModel.qrString.collectAsState()
     val qrCodeImage by vpViewModel.qrCodeImage.collectAsState()
     val webSocketMessage by prescriptionViewModel.webSocketMessage.collectAsState()
 
@@ -76,7 +77,7 @@ fun RotatingQrDisplayScreen(vpViewModel: RequestPresentationViewModel,
                             .alpha(alphaAnim),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(webSocketMessage, style = MaterialTheme.typography.headlineSmall)
+                        Text(webSocketMessage, style = MaterialTheme.typography.bodyLarge)
                     }
                 }
             }
@@ -84,6 +85,10 @@ fun RotatingQrDisplayScreen(vpViewModel: RequestPresentationViewModel,
             Text("<No QR>>")
         }
 
+//        Spacer(modifier = Modifier.height(16.dp))
+//        Text(qrCode, modifier = Modifier.align(
+//            Alignment.BottomCenter)
+//            .padding(8.dp))
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(
