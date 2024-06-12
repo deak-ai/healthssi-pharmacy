@@ -7,12 +7,9 @@ import androidx.lifecycle.viewModelScope
 import ch.healthssi.pharmacy.data.RequestPrescription
 import ch.healthssi.pharmacy.repo.PisServerRepository
 import io.ktor.client.*
-import io.ktor.client.plugins.websocket.*
 import io.ktor.http.*
-import io.ktor.websocket.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
 import org.jetbrains.skia.Image
 
@@ -44,29 +41,6 @@ class RequestPresentationViewModel(
 
     private val _qrCodeImage = MutableStateFlow<ImageBitmap?>(null)
     val qrCodeImage: StateFlow<ImageBitmap?> = _qrCodeImage
-
-
-//    private val _webSocketMessage = MutableStateFlow("")
-//    val webSocketMessage: StateFlow<String> = _webSocketMessage
-//
-//    init {
-//        viewModelScope.launch {
-//
-//            httpClient.ws(
-//                method = HttpMethod.Get,
-//                host = "localhost",
-//                port = 8081,
-//                path = "/notifications"
-//            ) {
-//                incoming.consumeAsFlow().collect { frame ->
-//                    if (frame is Frame.Text) {
-//                        val receivedText = frame.readText()
-//                        _webSocketMessage.value = receivedText
-//                    }
-//                }
-//            }
-//        }
-//    }
 
 
     fun handleEvent(event: VPEvent) {
