@@ -25,7 +25,6 @@ val appModule = module {
         }
     }
 
-   //single<PisServerRepository> { PisServerRepositoryImpl(get(), "https://pis.healthwallet.li") }
     single<PisServerRepository> { PisServerRepositoryImpl(get(), "https://pis.healthwallet.li") }
 
     single<RequestPresentationViewModel> { RequestPresentationViewModel(get(),get()) }

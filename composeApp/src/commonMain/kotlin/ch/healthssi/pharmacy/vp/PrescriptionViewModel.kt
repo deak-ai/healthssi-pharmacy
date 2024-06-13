@@ -26,7 +26,7 @@ class PrescriptionViewModel(
         viewModelScope.launch {
             val stateId = qrUrl.parameters["state"]
             println("Initialising websocket for $stateId")
-            httpClient.ws(
+            httpClient.wss(
                 method = HttpMethod.Get,
                 host = "pis.healthwallet.li",
                 port = 443,
