@@ -21,6 +21,8 @@ kotlin {
                         // Serve sources to debug inside browser
                         add(project.projectDir.path)
                     }
+                    port = 8888
+                    open = true
                 }
             }
         }

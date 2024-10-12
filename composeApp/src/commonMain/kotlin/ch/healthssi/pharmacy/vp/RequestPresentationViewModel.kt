@@ -60,7 +60,9 @@ class RequestPresentationViewModel(
     fun requestPresentation() {
         viewModelScope.launch {
             try {
-                val qrUrl = pisServerRepos.createPrescriptionPresentationRequest(RequestPrescription()).getOrThrow()
+                val presReq = RequestPrescription()
+                println(presReq)
+                val qrUrl = pisServerRepos.createPrescriptionPresentationRequest(presReq).getOrThrow()
                 val qrString = qrUrl.toString()
                 _qrString.value = qrString
 

@@ -3,6 +3,7 @@ package ch.healthssi.pharmacy.vp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ch.healthssi.pharmacy.data.PrescriptionData
+import ch.healthssi.pharmacy.di.PIS_SERVER
 import io.ktor.client.*
 import io.ktor.client.plugins.websocket.*
 import io.ktor.http.*
@@ -28,7 +29,7 @@ class PrescriptionViewModel(
             println("Initialising websocket for $stateId")
             httpClient.wss(
                 method = HttpMethod.Get,
-                host = "pis.healthwallet.li",
+                host = PIS_SERVER,
                 port = 443,
                 path = "/notifications/$stateId"
             ) {

@@ -28,7 +28,7 @@ fun NotificationScreen() {
             client.ws(
                 method = HttpMethod.Get,
                 host = "localhost",
-                port = 8080,
+                port = 8888,
                 path = "/notifications"
             ) {
                 send("Hello, server!")

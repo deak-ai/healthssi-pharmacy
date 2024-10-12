@@ -10,6 +10,8 @@ import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 
+const val PIS_SERVER = "pis2.healthwallet.li"
+
 val appModule = module {
 
     single {
@@ -25,7 +27,7 @@ val appModule = module {
         }
     }
 
-    single<PisServerRepository> { PisServerRepositoryImpl(get(), "https://pis.healthwallet.li") }
+    single<PisServerRepository> { PisServerRepositoryImpl(get(), "https://$PIS_SERVER") }
 
     single<RequestPresentationViewModel> { RequestPresentationViewModel(get(),get()) }
 
